@@ -10,7 +10,7 @@ export const useFileStore = create((set) => ({
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await axios.post("http://localhost:5000/api/files/upload", formData, {
+      const response = await axios.post("https://tms-backend-len7v0f23-devhanzalas-projects.vercel.app/api/files/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -27,7 +27,7 @@ export const useFileStore = create((set) => ({
   // Fetch Files
   fetchFiles: async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/files");
+      const response = await axios.get("https://tms-backend-len7v0f23-devhanzalas-projects.vercel.app/api/files");
       set({ fileData: response.data.files });
     } catch (error) {
       console.error("Fetch Error:", error.response?.data || error.message);
@@ -37,7 +37,7 @@ export const useFileStore = create((set) => ({
   // Fetch File Content by ID
   fetchFileData: async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/files/${id}`);
+      const response = await axios.get(`https://tms-backend-len7v0f23-devhanzalas-projects.vercel.app/api/files/${id}`);
       return response.data.content; // Return the CSV content
     } catch (error) {
       console.error("Fetch File Error:", error.response?.data || error.message);
@@ -48,7 +48,7 @@ export const useFileStore = create((set) => ({
   // Delete File
   deleteFile: async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/files/${id}`);
+      await axios.delete(`https://tms-backend-len7v0f23-devhanzalas-projects.vercel.app/api/files/${id}`);
       set((state) => ({
         fileData: state.fileData.filter((file) => file.id !== id),
       }));

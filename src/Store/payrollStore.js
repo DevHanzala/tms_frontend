@@ -2,7 +2,7 @@ import { create } from "zustand";
 import axios from "axios";
 import { payrollSchema } from "../Scheema/payrollScheema";
 
-const API_URL = "http://localhost:5000/api/payrolls";
+const API_URL = "https://tms-backend-len7v0f23-devhanzalas-projects.vercel.app/api/payrolls";
 
 export const usePayrollStore = create((set) => ({
   payrollData: [],

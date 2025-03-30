@@ -10,7 +10,7 @@ export const useAuthStore = create((set) => ({
   login: async (stakeholder, credentials) => {
     set({ loading: true, error: null });
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('https://tms-backend-len7v0f23-devhanzalas-projects.vercel.app/api/auth/login', {
         stakeholder,
         ...credentials,
       });

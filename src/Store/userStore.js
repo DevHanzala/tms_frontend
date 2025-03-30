@@ -4,7 +4,7 @@ import axios from "axios";
 import z from "zod";
 import { registerUserSchema } from "../Scheema/userScheema";
 
-const API_URL = "http://localhost:5000/api/users";
+const API_URL = "https://tms-backend-len7v0f23-devhanzalas-projects.vercel.app/api/users";
 const REGISTER_URL = `${API_URL}/upload`;
 
 // Create Zustand store for user management

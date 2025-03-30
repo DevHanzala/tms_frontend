@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/exemployees";
+const API_URL = "https://tms-backend-len7v0f23-devhanzalas-projects.vercel.app/api/exemployees";
 
 export const useExEmployeeStore = create((set) => ({
   exEmployees: [],
